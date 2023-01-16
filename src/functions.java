@@ -188,6 +188,8 @@ public class functions  {
         Student[][] newBoard = board.clone();
 
         //System.out.println(start_happpy);
+
+
         return board;
 
 
