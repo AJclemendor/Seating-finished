@@ -6,8 +6,12 @@ import java.nio.file.Paths;
 import java.sql.SQLOutput;
 import java.util.*;
 
+
 public class Main extends functions{
 
+
+    public static final int ROWS = 4;
+    public static final int COLUMNS = 8;
 
 
     public static String[] friends;
@@ -16,9 +20,9 @@ public class Main extends functions{
     public static ArrayList<Student> students;
 
     public static void main(String[] args) throws IOException {
-        String unknown = "//Users//ajclemendor//Desktop//Keys//realtest.csv";
+        String unknown = "seating_sheet.csv";
 
-        Path path = Paths.get("//Users//ajclemendor//Desktop//Keys//realtest.csv");
+        Path path = Paths.get("seating_sheet.csv");
 
         ArrayList<String> seatingData = new ArrayList<>();
         ArrayList<String> seatingDataFriend = new ArrayList<>();
@@ -42,7 +46,12 @@ public class Main extends functions{
         students = createStudentArr(friends, studentNames, glasses);
         // printKids(students);
         // printStudentsArray(friends);
-        // printStudentsArray(studentName);
+        // printKidsList(students);
+
+
+
+        Student[][] board = createEmptyBoard(ROWS, COLUMNS, students);
+        printBoard(board);
 
     }
 

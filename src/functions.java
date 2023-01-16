@@ -43,11 +43,12 @@ public class functions  {
 
     }
 
-    public static void printKids(ArrayList<Student> kids) {
+    public static void printKidsList(ArrayList<Student> kids) {
         for (Student kid : kids) {
             System.out.println(kid.getName());
         }
     }
+
 
     public static String[] partitionFriends(ArrayList<String> studentlist) {
 
@@ -79,6 +80,7 @@ public class functions  {
                 if (names[i].lastIndexOf(",") == names[i].length()-1) {
                     names[i] = names[i].substring(0,names[i].length()-1);
                 }
+                names[i] = names[i].replace("\"","");
 
 
         }
@@ -110,10 +112,12 @@ public class functions  {
 
             end = studentlist.get(i).length()-9;
             names[i] = studentlist.get(i).substring(start, end).strip();
-        /*    if (names[i].lastIndexOf(",") == names[i].length()-1) {
+            if (names[i].lastIndexOf(",") == names[i].length()-1) {
                 names[i] = names[i].substring(0,names[i].length()-1);
             }
-*/
+
+
+            names[i] = names[i].replace("\"","");
 
         }
         return names;
@@ -146,4 +150,38 @@ public class functions  {
         }
         return kids;
     }
+
+
+
+    public static Student[][] createEmptyBoard(int rows, int cols, ArrayList<Student> kids) {
+        Student[][] board = new Student[rows][cols];
+        int count = 0;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+               if (count < kids.size()) {
+                   board[i][j] = kids.get(count);
+                   count++;
+               }
+            }
+        }
+        return board;
+    }
+
+    public static void printBoard(Student[][] board) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                if (board[i][j] != null) {
+
+                    System.out.print(board[i][j].getName() + " ");
+                } else {
+                    System.out.print("empty ");
+                }
+            }
+                System.out.println();
+
+        }
+    }
+
+
 }
+
