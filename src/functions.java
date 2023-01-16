@@ -184,10 +184,32 @@ public class functions  {
 
 
     public static Student[][] optmialBoard(Student[][] board) {
-        double start_happpy = 0.0;
+        double start_unhapppy = getTotalUnHappy(board);
+        double new_unhappy = 0.0;
         Student[][] newBoard = board.clone();
 
-        //System.out.println(start_happpy);
+        for (int i=0; i< board.length; i++) {
+            for (int j=0; j<board[0].length; j++) {
+                for (int k=0; k< board.length; k++) {
+                    for (int c=0; c<board[0].length; c++) {
+
+                         studentSwap(i,j,k,c,newBoard);
+                         new_unhappy = getTotalUnHappy(newBoard);
+                         if (new_unhappy < start_unhapppy) {
+                             board = newBoard;
+                             start_unhapppy = new_unhappy;
+
+                             //System.out.println(new_unhappy);
+                             //System.out.println(start_unhapppy + " start ");
+                         } else {
+                             studentSwap(k,c,i,j,newBoard);
+                            // newBoard = board;
+                         }
+                    }
+                }
+
+            }
+        }
 
 
         return board;
@@ -240,8 +262,19 @@ public class functions  {
                 }
             }
         }
-        System.out.println(total_unhappy );
+        //System.out.println(total_unhappy );
         return total_unhappy;
+    }
+
+    public static void studentSwap(int row, int col, int new_row, int new_col, Student[][] board) {
+
+        if (board[row][col] == null || board[new_row][new_col] == null) {
+            System.out.println("Null student swap");
+            return;
+        }
+        Student dummy = board[row][col];
+        board[row][col] = board[new_row][new_col];
+        board[new_row][new_col] = dummy;
     }
 }
 

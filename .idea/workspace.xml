@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9ba4bc8-a9e5-4f48-8af6-99b76a20a38b" name="Changes" comment="added create board function and a display board function also smoothed out other issues">
+    <list default="true" id="c9ba4bc8-a9e5-4f48-8af6-99b76a20a38b" name="Changes" comment="Hapyp should be working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Seating V6/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seating V6/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Seating V6/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seating V6/Student.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Seating V6/functions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seating V6/functions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seating_sheet.csv" beforeDir="false" afterPath="$PROJECT_DIR$/seating_sheet.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +90,7 @@
       <workItem from="1672684678006" duration="4269000" />
       <workItem from="1673895015827" duration="47000" />
       <workItem from="1673895065910" duration="39000" />
-      <workItem from="1673895148677" duration="3179000" />
+      <workItem from="1673895148677" duration="3950000" />
     </task>
     <task id="LOCAL-00001" summary="added create board function and a display board function also smoothed out other issues">
       <created>1673896347199</created>
@@ -103,7 +99,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673896347199</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Hapyp should be working">
+      <created>1673898614416</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673898614416</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Hapyp should be working">
+      <created>1673898629791</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673898629791</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added create board function and a display board function also smoothed out other issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="added create board function and a display board function also smoothed out other issues" />
+    <MESSAGE value="Hapyp should be working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hapyp should be working" />
   </component>
 </project>

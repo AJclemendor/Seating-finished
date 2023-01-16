@@ -56,6 +56,8 @@ public class Main extends functions{
 
         board = optmialBoard(board);
 
+        printBoard(board);
+
     }
 
 
