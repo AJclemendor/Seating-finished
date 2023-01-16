@@ -172,7 +172,7 @@ public class functions  {
             for (int j = 0; j < board[i].length; j++) {
                 if (board[i][j] != null) {
 
-                    System.out.print(board[i][j].getName() + " ");
+                    System.out.print(board[i][j].getName() + ": ");
                 } else {
                     System.out.print("empty ");
                 }
@@ -183,5 +183,63 @@ public class functions  {
     }
 
 
+    public static Student[][] optmialBoard(Student[][] board) {
+        double start_happpy = 0.0;
+        Student[][] newBoard = board.clone();
+
+        //System.out.println(start_happpy);
+        return board;
+
+
+    }
+
+
+    public static double getUnhappySingleStudent(Student[][] board, int row, int col) {
+
+
+        String[] friends = board[row][col].getFriends().split(",");
+
+
+        double unhappy = 0.0;
+        for (int i=0; i<board.length; i++) {
+            for (int j=0; j<board[0].length; j++) {
+                if (board[i][j] != null) {
+                    if (!(board[i][j].getName().equals(board[row][col].getName()))) {
+                        for (String name : friends) {
+                            String friend_name = board[i][j].getName().replace(",", "").toLowerCase().strip();
+
+                            //System.out.println(name.toLowerCase());
+                            //System.out.println(friend_name.toLowerCase());
+                            // if you want to see names being compared
+                            if (friend_name.equals(name.toLowerCase().strip())) {
+
+                                double first = Math.pow((row-i), 2);
+                                double second = Math.pow((col-j), 2);
+                                unhappy = Math.sqrt((first+second));
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //System.out.println(unhappy);
+        // if you want to see unhappy value
+        return unhappy;
+    }
+
+    public static double getTotalUnHappy(Student[][] board) {
+        double total_unhappy = 0.0;
+        for (int i=0; i<board.length; i++) {
+            for (int  j=0; j<board[0].length; j++) {
+                if (board[i][j] != null) {
+                    total_unhappy += getUnhappySingleStudent(board, i, j);
+
+                }
+            }
+        }
+        System.out.println(total_unhappy );
+        return total_unhappy;
+    }
 }
 

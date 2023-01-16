@@ -44,14 +44,17 @@ public class Main extends functions{
 
         // create student arr list of objects
         students = createStudentArr(friends, studentNames, glasses);
-        // printKids(students);
-        // printStudentsArray(friends);
+        //printKidsList(students);
+        //printStudentsArray(friends);
         // printKidsList(students);
 
 
 
         Student[][] board = createEmptyBoard(ROWS, COLUMNS, students);
         printBoard(board);
+
+
+        board = optmialBoard(board);
 
     }
 
