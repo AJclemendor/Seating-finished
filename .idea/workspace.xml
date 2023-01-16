@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9ba4bc8-a9e5-4f48-8af6-99b76a20a38b" name="Changes" comment="Hapyp should be working">
+    <list default="true" id="c9ba4bc8-a9e5-4f48-8af6-99b76a20a38b" name="Changes" comment="WORKING">
+      <change afterPath="$PROJECT_DIR$/Output.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seating V6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Seating V6.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seating V6/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seating V6/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Seating V6/functions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seating V6/functions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,11 +49,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/AJ/eclipse-workspace/Seating-V6",
+    "last_opened_file_path": "C:/Users/AJ/Desktop/commons-csv-1.9.0-src/src/main/java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -58,7 +65,7 @@
       <recent name="C:\Users\AJ\eclipse-workspace\Seating-V6" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Seating V6" />
@@ -66,6 +73,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="opencsv" type="JarApplication">
+      <option name="JAR_PATH" value="$USER_HOME$/Downloads/opencsv-5.7.1.jar" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\AJ\eclipse-workspace\Seating-V6" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JAR Application.opencsv" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -90,7 +107,11 @@
       <workItem from="1672684678006" duration="4269000" />
       <workItem from="1673895015827" duration="47000" />
       <workItem from="1673895065910" duration="39000" />
-      <workItem from="1673895148677" duration="3950000" />
+      <workItem from="1673895148677" duration="4804000" />
+      <workItem from="1673900019275" duration="188000" />
+      <workItem from="1673900211497" duration="5000" />
+      <workItem from="1673900230098" duration="1620000" />
+      <workItem from="1673901898422" duration="189000" />
     </task>
     <task id="LOCAL-00001" summary="added create board function and a display board function also smoothed out other issues">
       <created>1673896347199</created>
@@ -113,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673898629791</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="WORKING">
+      <created>1673899428998</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673899428998</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +150,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added create board function and a display board function also smoothed out other issues" />
     <MESSAGE value="Hapyp should be working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hapyp should be working" />
+    <MESSAGE value="WORKING" />
+    <option name="LAST_COMMIT_MESSAGE" value="WORKING" />
   </component>
 </project>

@@ -1,11 +1,16 @@
+import com.opencsv.CSVWriter;
+
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-public class functions  {
+public class functions {
 
 
     public static ArrayList<String> createSeatingData(Path path) throws IOException {
@@ -60,31 +65,31 @@ public class functions  {
 
          */
 
-            String[] names = new String[studentlist.size()];
-            int start = 0;
-            int end = 0;
-            for (int i=0; i<names.length; i++) {
-                studentlist.set(i,studentlist.get(i).replaceFirst("No","Fi"));
-                start = studentlist.get(i).indexOf("everyone\",");
-                start += 10;
+        String[] names = new String[studentlist.size()];
+        int start = 0;
+        int end = 0;
+        for (int i = 0; i < names.length; i++) {
+            studentlist.set(i, studentlist.get(i).replaceFirst("No", "Fi"));
+            start = studentlist.get(i).indexOf("everyone\",");
+            start += 10;
 
-                if (studentlist.get(i).contains("Yes")) {
-                    end = studentlist.get(i).indexOf("Yes");
-                    //System.out.println(studentlist.get(i).indexOf("Yes"));
-                } else {
-                    end = studentlist.get(i).indexOf("No");
-                    //System.out.println(studentlist.get(i).indexOf("No"));
-                }
+            if (studentlist.get(i).contains("Yes")) {
+                end = studentlist.get(i).indexOf("Yes");
+                //System.out.println(studentlist.get(i).indexOf("Yes"));
+            } else {
+                end = studentlist.get(i).indexOf("No");
+                //System.out.println(studentlist.get(i).indexOf("No"));
+            }
 
-                names[i] = studentlist.get(i).substring(start, end).replace("\"", "").strip();
-                if (names[i].lastIndexOf(",") == names[i].length()-1) {
-                    names[i] = names[i].substring(0,names[i].length()-1);
-                }
-                names[i] = names[i].replace("\"","");
+            names[i] = studentlist.get(i).substring(start, end).replace("\"", "").strip();
+            if (names[i].lastIndexOf(",") == names[i].length() - 1) {
+                names[i] = names[i].substring(0, names[i].length() - 1);
+            }
+            names[i] = names[i].replace("\"", "");
 
 
         }
-            return names;
+        return names;
     }
 
     public static String[] partitionStudents(ArrayList<String> studentlist) {
@@ -96,13 +101,13 @@ public class functions  {
         String[] names = new String[studentlist.size()];
         int start = 0;
         int end = 0;
-        for (int i=0; i<names.length; i++) {
+        for (int i = 0; i < names.length; i++) {
             //System.out.println(studentlist.get(i));
 
-            studentlist.set(i,studentlist.get(i).replaceFirst("No","Fi"));
+            studentlist.set(i, studentlist.get(i).replaceFirst("No", "Fi"));
             if (studentlist.get(i).contains("Yes")) {
                 start = studentlist.get(i).indexOf("Yes");
-                start +=5;
+                start += 5;
                 //System.out.println(studentlist.get(i).indexOf("Yes"));
             } else {
                 start = studentlist.get(i).indexOf("No");
@@ -110,14 +115,14 @@ public class functions  {
                 //System.out.println(studentlist.get(i).indexOf("No"));
             }
 
-            end = studentlist.get(i).length()-9;
+            end = studentlist.get(i).length() - 9;
             names[i] = studentlist.get(i).substring(start, end).strip();
-            if (names[i].lastIndexOf(",") == names[i].length()-1) {
-                names[i] = names[i].substring(0,names[i].length()-1);
+            if (names[i].lastIndexOf(",") == names[i].length() - 1) {
+                names[i] = names[i].substring(0, names[i].length() - 1);
             }
 
 
-            names[i] = names[i].replace("\"","");
+            names[i] = names[i].replace("\"", "");
 
         }
         return names;
@@ -139,10 +144,10 @@ public class functions  {
     }
 
 
-    public static ArrayList<Student> createStudentArr(String[] studentNames, String[] friends, boolean[] glasses){
+    public static ArrayList<Student> createStudentArr(String[] studentNames, String[] friends, boolean[] glasses) {
 
         ArrayList<Student> kids = new ArrayList<>();
-        for (int i=0; i<studentNames.length; i++) {
+        for (int i = 0; i < studentNames.length; i++) {
 
             kids.add(i, new Student(friends[i], studentNames[i], glasses[i]));
 
@@ -152,16 +157,15 @@ public class functions  {
     }
 
 
-
     public static Student[][] createEmptyBoard(int rows, int cols, ArrayList<Student> kids) {
         Student[][] board = new Student[rows][cols];
         int count = 0;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-               if (count < kids.size()) {
-                   board[i][j] = kids.get(count);
-                   count++;
-               }
+                if (count < kids.size()) {
+                    board[i][j] = kids.get(count);
+                    count++;
+                }
             }
         }
         return board;
@@ -177,7 +181,7 @@ public class functions  {
                     System.out.print("empty ");
                 }
             }
-                System.out.println();
+            System.out.println();
 
         }
     }
@@ -188,23 +192,23 @@ public class functions  {
         double new_unhappy = 0.0;
         Student[][] newBoard = board.clone();
 
-        for (int i=0; i< board.length; i++) {
-            for (int j=0; j<board[0].length; j++) {
-                for (int k=0; k< board.length; k++) {
-                    for (int c=0; c<board[0].length; c++) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                for (int k = 0; k < board.length; k++) {
+                    for (int c = 0; c < board[0].length; c++) {
 
-                         studentSwap(i,j,k,c,newBoard);
-                         new_unhappy = getTotalUnHappy(newBoard);
-                         if (new_unhappy < start_unhapppy) {
-                             board = newBoard;
-                             start_unhapppy = new_unhappy;
+                        studentSwap(i, j, k, c, newBoard);
+                        new_unhappy = getTotalUnHappy(newBoard);
+                        if (new_unhappy < start_unhapppy) {
+                            board = newBoard;
+                            start_unhapppy = new_unhappy;
 
-                             //System.out.println(new_unhappy);
-                             //System.out.println(start_unhapppy + " start ");
-                         } else {
-                             studentSwap(k,c,i,j,newBoard);
+                            //System.out.println(new_unhappy);
+                            //System.out.println(start_unhapppy + " start ");
+                        } else {
+                            studentSwap(k, c, i, j, newBoard);
                             // newBoard = board;
-                         }
+                        }
                     }
                 }
 
@@ -225,8 +229,8 @@ public class functions  {
 
 
         double unhappy = 0.0;
-        for (int i=0; i<board.length; i++) {
-            for (int j=0; j<board[0].length; j++) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
                 if (board[i][j] != null) {
                     if (!(board[i][j].getName().equals(board[row][col].getName()))) {
                         for (String name : friends) {
@@ -237,9 +241,9 @@ public class functions  {
                             // if you want to see names being compared
                             if (friend_name.equals(name.toLowerCase().strip())) {
 
-                                double first = Math.pow((row-i), 2);
-                                double second = Math.pow((col-j), 2);
-                                unhappy = Math.sqrt((first+second));
+                                double first = Math.pow((row - i), 2);
+                                double second = Math.pow((col - j), 2);
+                                unhappy = Math.sqrt((first + second));
 
                             }
                         }
@@ -254,8 +258,8 @@ public class functions  {
 
     public static double getTotalUnHappy(Student[][] board) {
         double total_unhappy = 0.0;
-        for (int i=0; i<board.length; i++) {
-            for (int  j=0; j<board[0].length; j++) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
                 if (board[i][j] != null) {
                     total_unhappy += getUnhappySingleStudent(board, i, j);
 
@@ -276,5 +280,8 @@ public class functions  {
         board[row][col] = board[new_row][new_col];
         board[new_row][new_col] = dummy;
     }
+
+
+
 }
 

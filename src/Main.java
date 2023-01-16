@@ -58,6 +58,9 @@ public class Main extends functions{
 
         printBoard(board);
 
+        //writeDataLineByLine(board, ROWS, COLUMNS);
+
+
     }
 
 
