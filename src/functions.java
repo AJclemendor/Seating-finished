@@ -234,8 +234,8 @@ public class functions {
         String[] friends = board[row][col].getFriends().split(",");
 
          if (board[row][col].isGlassesTOF()) {
-            if (row > 1) {
-                unhappy += 50;
+            if (row > 2) {
+                unhappy += 4*row;
             }
         }
 
