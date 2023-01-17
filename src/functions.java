@@ -190,31 +190,33 @@ public class functions {
     }
 
 
-    public static Student[][] optmialBoard(Student[][] board, int row_weight) {
+    public static Student[][] optmialBoard(Student[][] board, int row_weight, int intensity) {
         double start_unhapppy = getTotalUnHappy(board, row_weight);
         double new_unhappy = 0.0;
         Student[][] newBoard = board.clone();
 
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[0].length; j++) {
-                for (int k = 0; k < board.length; k++) {
-                    for (int c = 0; c < board[0].length; c++) {
+        for (int run = 0; run<intensity; run++) {
+            for (int i = 0; i < board.length; i++) {
+                for (int j = 0; j < board[0].length; j++) {
+                    for (int k = 0; k < board.length; k++) {
+                        for (int c = 0; c < board[0].length; c++) {
 
-                        studentSwap(i, j, k, c, newBoard);
-                        new_unhappy = getTotalUnHappy(newBoard, row_weight);
-                        if (new_unhappy < start_unhapppy) {
-                            board = newBoard;
-                            start_unhapppy = new_unhappy;
+                            studentSwap(i, j, k, c, newBoard);
+                            new_unhappy = getTotalUnHappy(newBoard, row_weight);
+                            if (new_unhappy < start_unhapppy) {
+                                board = newBoard;
+                                start_unhapppy = new_unhappy;
 
-                            //System.out.println(new_unhappy);
-                            //System.out.println(start_unhapppy + " start ");
-                        } else {
-                            studentSwap(k, c, i, j, newBoard);
-                            // newBoard = board;
+                                //System.out.println(new_unhappy);
+                                //System.out.println(start_unhapppy + " start ");
+                            } else {
+                                studentSwap(k, c, i, j, newBoard);
+                                // newBoard = board;
+                            }
                         }
                     }
-                }
 
+                }
             }
         }
 
@@ -256,6 +258,7 @@ public class functions {
 
                                 if (i != row) {
                                     unhappy += row_weight;
+                                    // System.out.println(row_weight);
                                 }
 
                             }
@@ -325,6 +328,9 @@ public class functions {
             }
 
             System.out.println("Data written to CSV file successfully!");
+            System.out.println("If you feel the chart was not good try increasing the intensity number or using a custom" +
+                    " \n row weight the higher the weight the more the algo values students in the same row,\n 0 = no " +
+                    "extra row value");
         } catch (IOException e) {
             e.printStackTrace();
         }

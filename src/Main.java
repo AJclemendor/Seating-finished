@@ -9,7 +9,9 @@ import java.util.*;
 
 public class Main extends functions {
 
-    public static String weight;
+    public static String weight = "filler";
+    public static String setting = "filler";
+    public static int intensity = 3;
     public static int row_weight;
     public static int ROWS;
     public static int COLUMNS;
@@ -24,17 +26,62 @@ public class Main extends functions {
 
 
         Scanner input = new Scanner(System.in);
+
+        while (setting.length() > 3) {
+            System.out.println("Would you like to use simple or advanced settings? S/A");
+            String settings = input.next();
+            if (settings.equalsIgnoreCase("s")) {
+                setting = "s";
+                break;
+            } else if (settings.equalsIgnoreCase("a")) {
+                setting = "a";
+                break;
+            }
+        }
+
+        while (weight.length() > 3) {
+            System.out.println("Do you want rows to have more weight then cols? Y/N");
+            String weight = input.next();
+            if (weight.equalsIgnoreCase("Y")) {
+                row_weight = 3;
+                weight = "y";
+                break;
+            } else if (weight.equalsIgnoreCase("N")) {
+                row_weight = 0;
+                weight = "n";
+                break;
+            }
+        }
+        boolean check = true;
+        if (setting.equals("a")) {
+            while (check) {
+
+                System.out.println("Would you like a custom col weight? default yes = 3 default no = 0: Y/N");
+                setting = input.next();
+                if (setting.equalsIgnoreCase("y")) {
+                    System.out.println("what weight? ");
+                    row_weight = input.nextInt();
+                    setting = "a";
+                    check = false;
+                } else if (setting.equalsIgnoreCase("n")) {
+                    System.out.printf("weight not changed ");
+                    setting = "a";
+                    check = false;
+
+                }
+            }
+        }
+        if (setting.equalsIgnoreCase("a")) {
+                System.out.println("What intensity do you want (higher is longer) default is 1 ");
+                intensity = input.nextInt();
+            }
+
+
         System.out.println("Enter the number of rows: ");
         int ROWS = input.nextInt();
         System.out.println("Enter the number of columns: ");
         int COLUMNS = input.nextInt();
-        System.out.println(" Do you want rows to have more weight then cols? Y/N");
-        String weight = input.next();
-        if (weight.equalsIgnoreCase("Y")) {
-            row_weight = 3;
-        } else {
-            row_weight = 0;
-        }
+
 
 
 
@@ -88,7 +135,7 @@ public class Main extends functions {
         // printBoard(board); -- prints pre board
 
 
-        board = optmialBoard(board, row_weight);
+        board = optmialBoard(board, row_weight, intensity);
 
         // printBoard(board); -- prints post board
 
@@ -117,6 +164,7 @@ public class Main extends functions {
         }
 
         writeToCSV(names, "Output.csv");
+
 
 
 
