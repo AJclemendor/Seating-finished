@@ -7,9 +7,6 @@
     <list default="true" id="c9ba4bc8-a9e5-4f48-8af6-99b76a20a38b" name="Changes" comment="Testing weight">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Seating V6/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seating V6/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Seating V6/functions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seating V6/functions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +23,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
