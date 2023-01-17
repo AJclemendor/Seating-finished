@@ -9,7 +9,8 @@ import java.util.*;
 
 public class Main extends functions {
 
-
+    public static String weight;
+    public static int row_weight;
     public static int ROWS;
     public static int COLUMNS;
     public static String filepath;
@@ -27,6 +28,15 @@ public class Main extends functions {
         int ROWS = input.nextInt();
         System.out.println("Enter the number of columns: ");
         int COLUMNS = input.nextInt();
+        System.out.println(" Do you want rows to have more weight then cols? Y/N");
+        String weight = input.next();
+        if (weight.equalsIgnoreCase("Y")) {
+            row_weight = 3;
+        } else {
+            row_weight = 0;
+        }
+
+
 
         filepath = "";
         // if the file path exists, then it will read the file otherwise keep asking
@@ -78,7 +88,7 @@ public class Main extends functions {
         // printBoard(board); -- prints pre board
 
 
-        board = optmialBoard(board);
+        board = optmialBoard(board, row_weight);
 
         // printBoard(board); -- prints post board
 

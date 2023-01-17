@@ -190,8 +190,8 @@ public class functions {
     }
 
 
-    public static Student[][] optmialBoard(Student[][] board) {
-        double start_unhapppy = getTotalUnHappy(board);
+    public static Student[][] optmialBoard(Student[][] board, int row_weight) {
+        double start_unhapppy = getTotalUnHappy(board, row_weight);
         double new_unhappy = 0.0;
         Student[][] newBoard = board.clone();
 
@@ -201,7 +201,7 @@ public class functions {
                     for (int c = 0; c < board[0].length; c++) {
 
                         studentSwap(i, j, k, c, newBoard);
-                        new_unhappy = getTotalUnHappy(newBoard);
+                        new_unhappy = getTotalUnHappy(newBoard, row_weight);
                         if (new_unhappy < start_unhapppy) {
                             board = newBoard;
                             start_unhapppy = new_unhappy;
@@ -225,13 +225,19 @@ public class functions {
     }
 
 
-    public static double getUnhappySingleStudent(Student[][] board, int row, int col) {
+    public static double getUnhappySingleStudent(Student[][] board, int row, int col, int row_weight) {
+        double unhappy = 0.0;
 
 
         String[] friends = board[row][col].getFriends().split(",");
 
+        if (board[row][col].isGlassesTOF()) {
+            if (row < 2) {
+                unhappy += 10;
+            }
+        }
 
-        double unhappy = 0.0;
+
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 if (board[i][j] != null) {
@@ -248,6 +254,10 @@ public class functions {
                                 double second = Math.pow((col - j), 2);
                                 unhappy = Math.sqrt((first + second));
 
+                                if (i != row) {
+                                    unhappy += row_weight;
+                                }
+
                             }
                         }
                     }
@@ -259,12 +269,12 @@ public class functions {
         return unhappy;
     }
 
-    public static double getTotalUnHappy(Student[][] board) {
+    public static double getTotalUnHappy(Student[][] board, int row_weight) {
         double total_unhappy = 0.0;
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 if (board[i][j] != null) {
-                    total_unhappy += getUnhappySingleStudent(board, i, j);
+                    total_unhappy += getUnhappySingleStudent(board, i, j, row_weight);
 
                 }
             }
