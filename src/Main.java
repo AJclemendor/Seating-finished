@@ -7,7 +7,7 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 
-public class Main extends functions{
+public class Main extends functions {
 
 
     public static final int ROWS = 4;
@@ -49,21 +49,48 @@ public class Main extends functions{
         // printKidsList(students);
 
 
-
         Student[][] board = createEmptyBoard(ROWS, COLUMNS, students);
-        printBoard(board);
+        // printBoard(board); -- prints pre board
 
 
         board = optmialBoard(board);
 
-        printBoard(board);
+        // printBoard(board); -- prints post board
 
         //writeDataLineByLine(board, ROWS, COLUMNS);
 
+        File csvFile = new File("Output.csv");
+        FileWriter fileWriter = new FileWriter(csvFile);
+
+        //write header line here if you need.
+
+        String[][] names = new String[ROWS][COLUMNS];
+        for (int i =0; i<board.length; i++){
+            for (int j = 0; j<board[i].length; j++) {
+                if (board[i][j] != null) {
+                    names[i][j] = board[i][j].getName();
+                    while (names[i][j].length() < 20) {
+                        names[i][j] += " ";
+                    }
+                } else {
+                    names[i][j] = "FILLER";
+                    while (names[i][j].length() < 20) {
+                        names[i][j] += " ";
+                    }
+                }
+            }
+        }
+
+        writeToCSV(names, "Output.csv");
+
+
+
+
+
+
+
 
     }
-
-
-
-
 }
+
+

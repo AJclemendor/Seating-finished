@@ -1,4 +1,3 @@
-import com.opencsv.CSVWriter;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -9,6 +8,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 public class functions {
 
@@ -273,7 +276,7 @@ public class functions {
     public static void studentSwap(int row, int col, int new_row, int new_col, Student[][] board) {
 
         if (board[row][col] == null || board[new_row][new_col] == null) {
-            System.out.println("Null student swap");
+            // System.out.println("Null student swap");
             return;
         }
         Student dummy = board[row][col];
@@ -281,6 +284,41 @@ public class functions {
         board[new_row][new_col] = dummy;
     }
 
+    public static void writeToCSV(String[][] board, String fileName) {
+        // check if board is valid
+        if (board == null || board.length == 0) {
+            //System.out.println("Invalid board");
+            return;
+        }
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))) {
+            // write the header
+            bw.write("AJ Seating Chart");
+            bw.newLine();
+
+            // write the data
+            for (String[] row : board) {
+                try {
+                    for (int j = 0; j < row.length; j++) {
+
+                        bw.write(row[j]);
+                        if (j < row.length - 1) {
+                            bw.write(",");
+                        }
+                    }
+                }
+                catch (Exception e) {
+                    //System.out.println("NULL SPOT BYPASSED");
+
+                }
+                bw.newLine();
+            }
+
+            System.out.println("Data written to CSV file successfully!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }
