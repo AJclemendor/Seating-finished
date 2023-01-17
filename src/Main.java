@@ -10,9 +10,9 @@ import java.util.*;
 public class Main extends functions {
 
 
-    public static final int ROWS = 4;
-    public static final int COLUMNS = 8;
-
+    public static int ROWS;
+    public static int COLUMNS;
+    public static String filepath;
 
     public static String[] friends;
     public static String[] studentNames;
@@ -20,9 +20,34 @@ public class Main extends functions {
     public static ArrayList<Student> students;
 
     public static void main(String[] args) throws IOException {
-        String unknown = "seating_sheet.csv";
 
-        Path path = Paths.get("seating_sheet.csv");
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the number of rows: ");
+        int ROWS = input.nextInt();
+        System.out.println("Enter the number of columns: ");
+        int COLUMNS = input.nextInt();
+
+        filepath = "";
+        // if the file path exists, then it will read the file otherwise keep asking
+
+        while (filepath.equals("")) {
+            System.out.println("Enter the file path and dont append .csv: ");
+            filepath = input.next() + ".csv";
+
+            if (!Files.exists(Paths.get(filepath))) {
+                System.out.println("File does not exist");
+                filepath = "";
+            }
+        }
+
+
+
+
+
+        String unknown = filepath;
+
+        Path path = Paths.get(filepath);
 
         ArrayList<String> seatingData = new ArrayList<>();
         ArrayList<String> seatingDataFriend = new ArrayList<>();
