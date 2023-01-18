@@ -327,10 +327,10 @@ public class functions {
                 bw.newLine();
             }
 
-            System.out.println("Data written to CSV file successfully!");
-            System.out.println("If you feel the chart was not good try increasing the intensity number or using a custom" +
-                    " \n row weight the higher the weight the more the algo values students in the same row,\n 0 = no " +
-                    "extra row value");
+            //System.out.println("Data written to CSV file successfully!");
+            //System.out.println("If you feel the chart was not good try increasing the intensity number or using a custom" +
+      //              " \n row weight the higher the weight the more the algo values students in the same row,\n 0 = no " +
+            //            "extra row value");
         } catch (IOException e) {
             e.printStackTrace();
         }
