@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9ba4bc8-a9e5-4f48-8af6-99b76a20a38b" name="Changes" comment="Testing weight">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_sdk_18_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GFXRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Output.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Seating V6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Seating V6.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seating V6/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Seating.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,16 +49,40 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\AJ\eclipse-workspace\Seating-V6" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="Application.GFXRunner">
+    <configuration name="GFXRunner" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GFXRunner" />
+      <module name="Seating V6" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/Desktop/untitled folder/javafx-sdk-19.0.2/lib&quot; --add-modules javafx.controls,javafx.fxml " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GradAlgorithmApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GradAlgorithmApplication" />
+      <module name="Seating V6" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SeatingRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SeatingRunner" />
       <module name="Seating V6" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -64,12 +95,15 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.GFXRunner" />
+      <item itemvalue="Application.GradAlgorithmApplication" />
       <item itemvalue="JAR Application.opencsv" />
+      <item itemvalue="Application.SeatingRunner" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.GradAlgorithmApplication" />
+        <item itemvalue="Application.SeatingRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -99,6 +133,13 @@
       <workItem from="1673925791574" duration="2294000" />
       <workItem from="1673928122901" duration="195000" />
       <workItem from="1673967346591" duration="2432000" />
+      <workItem from="1674056730899" duration="12000" />
+      <workItem from="1674056753418" duration="12000" />
+      <workItem from="1674056772635" duration="122000" />
+      <workItem from="1674056906169" duration="130000" />
+      <workItem from="1674057040577" duration="138000" />
+      <workItem from="1674057199958" duration="647000" />
+      <workItem from="1674065401293" duration="2526000" />
     </task>
     <task id="LOCAL-00001" summary="added create board function and a display board function also smoothed out other issues">
       <created>1673896347199</created>
@@ -174,5 +215,8 @@
     <MESSAGE value="FINAL COMMIT YES" />
     <MESSAGE value="Testing weight" />
     <option name="LAST_COMMIT_MESSAGE" value="Testing weight" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Seating_finished$GFXRunner.ic" NAME="GFXRunner Coverage Results" MODIFIED="1674065949407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
